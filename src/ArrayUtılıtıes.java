@@ -14,6 +14,15 @@ public class ArrayUtılıtıes {
         return duplicates;
     }
 
-    public static ArrayList<String>
+    public static ArrayList<String> findDuplicateStrings(String[] words) {
+        ArrayList<String> duplicates = new ArrayList<String >();
+        for(int i = 0; i < words.length; i++) {
+            for(int j = i + 1; j < words.length; j++) {
+                if(words[i].equals(words[j]) && !duplicates.contains(words[i])){
+                    duplicates.add(words[i]);
+                }
+            }
+        }
+    }
 
 }
