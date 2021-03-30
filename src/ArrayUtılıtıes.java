@@ -78,4 +78,22 @@ public class ArrayUtılıtıes {
         return minMax;
     }
 
+    // make minMax generic:
+
+    public static <T extends Comparable<T>> Pair<T> findMinMax(T[] array) {
+        T min = array[0];
+        T max = array[0];
+
+        for(int i = 0; i < array.length; i++) {
+            if(min.compareTo(array[i]) > 0) {
+                min = array[i];
+            }
+            if(max.compareTo(array[i]) < 0) {
+                max = array[i];
+            }
+        }
+        Pair<T> minMax = new Pair<>(min, max);
+        return minMax;
+    }
+
 }
